@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
-- Live Site URL: [Live site](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/Nabil19911/Frontend-Mento-Article-preview-component-solution)
+- Live Site URL: [Live site](https://nabil19911.github.io/Frontend-Mento-Article-preview-component-solution/)
 
 ## My process
 
