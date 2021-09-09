@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+// Style Veriables
+$VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+$DesaturatedDarkBlue: hsl(214, 17%, 51%);
+$GrayishBlue: hsl(212, 23%, 69%);
+$LightGrayishBlue: hsl(210, 46%, 95%);
+$font-weights: (
+  "normal": 500,
+  "bold": 700,
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+  background: $LightGrayishBlue;
+  color: $VeryDarkGrayishBlue;
+}
+main {
+  height: 375px;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 500px;
+  // overflow: hidden;
+  background: white;
+  border-radius: 10px;
+}
+.image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px 0 0 10px;
+  & img {
+    width: 100%;
+  }
+}
+.detail-wrapper {
+  position: relative;
+  background: white;
+  left: -90px;
+  width: 550px;
+  & > div {
+    padding: 5% 0 5% 10%;
+    width: 100%;
+    & > h1 {
+      font-weight: map-get($font-weights, bold);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    & > p {
+      font-size: 1.08rem;
+      line-height: 25px;
+      margin-bottom: 30px;
+      font-weight: map-get($font-weights, normal);
+      color: $DesaturatedDarkBlue;
+    }
+  }
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+
+  & .user-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    & > img {
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 10%;
+    }
+    & > div {
+      & p {
+        font-weight: map-get($font-weights, bold);
+        &:first-child {
+          margin-bottom: 5%;
+        }
+        &:last-child {
+          color: $GrayishBlue;
+        }
+      }
+    }
+  }
+
+  & .share {
+    justify-self: flex-end;
+    position: relative;
+    & .share-icon {
+      background-color: $LightGrayishBlue;
+      width: 40px;
+      height: 40px;
+      padding: 10%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background: $DesaturatedDarkBlue;
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  & .social-media-icon-wrapper {
+    width: 300px;
+    border-radius: 10px;
+    color: $GrayishBlue;
+    background: $VeryDarkGrayishBlue;
+    position: absolute;
+    bottom: 75px;
+    left: -130px;
+    z-index: 1;
+    & .social-media {
+      padding: 7% 15%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & span:first-child {
+        letter-spacing: 5px;
+      }
+    }
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: $VeryDarkGrayishBlue;
+      position: absolute;
+      left: 140px;
+      bottom: -10px;
+      transform: rotate(45deg);
+    }
+  }
+}
+.active {
+  visibility: hidden;
+}

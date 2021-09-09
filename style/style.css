@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+  background: #ecf2f8;
+  color: #48556a;
+}
+
+main {
+  height: 375px;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 500px;
+      grid-template-columns: auto 500px;
+  background: white;
+  border-radius: 10px;
+}
+
+.image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px 0 0 10px;
+}
+
+.image-wrapper img {
+  width: 100%;
+}
+
+.detail-wrapper {
+  position: relative;
+  background: white;
+  left: -90px;
+  width: 550px;
+}
+
+.detail-wrapper > div {
+  padding: 5% 0 5% 10%;
+  width: 100%;
+}
+
+.detail-wrapper > div > h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.detail-wrapper > div > p {
+  font-size: 1.08rem;
+  line-height: 25px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: #6d7f97;
+}
+
+.user {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+}
+
+.user .user-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user .user-wrapper > img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10%;
+}
+
+.user .user-wrapper > div p {
+  font-weight: 700;
+}
+
+.user .user-wrapper > div p:first-child {
+  margin-bottom: 5%;
+}
+
+.user .user-wrapper > div p:last-child {
+  color: #9eafc2;
+}
+
+.user .share {
+  justify-self: flex-end;
+  position: relative;
+}
+
+.user .share .share-icon {
+  background-color: #ecf2f8;
+  width: 40px;
+  height: 40px;
+  padding: 10%;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user .share .share-icon:hover {
+  background: #6d7f97;
+}
+
+.user .share .share-icon:hover path {
+  fill: white;
+}
+
+.user .social-media-icon-wrapper {
+  width: 300px;
+  border-radius: 10px;
+  color: #9eafc2;
+  background: #48556a;
+  position: absolute;
+  bottom: 75px;
+  left: -130px;
+  z-index: 1;
+}
+
+.user .social-media-icon-wrapper .social-media {
+  padding: 7% 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user .social-media-icon-wrapper .social-media span:first-child {
+  letter-spacing: 5px;
+}
+
+.user .social-media-icon-wrapper::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #48556a;
+  position: absolute;
+  left: 140px;
+  bottom: -10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.active {
+  visibility: hidden;
+}
+/*# sourceMappingURL=style.css.map */
