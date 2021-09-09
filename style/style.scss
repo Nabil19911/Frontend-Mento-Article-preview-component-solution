@@ -1,20 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
-
-// Style Veriables
-$VeryDarkGrayishBlue: hsl(217, 19%, 35%);
-$DesaturatedDarkBlue: hsl(214, 17%, 51%);
-$GrayishBlue: hsl(212, 23%, 69%);
-$LightGrayishBlue: hsl(210, 46%, 95%);
-$font-weights: (
-  "normal": 500,
-  "bold": 700,
-);
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import "./variables";
+@import "./reset";
 
 body {
   font-size: 13px;
@@ -30,19 +15,32 @@ main {
   height: 375px;
   width: 100%;
   max-width: 1000px;
+  min-width: 335px;
   margin: auto;
   display: grid;
   grid-template-columns: auto 500px;
-  // overflow: hidden;
   background: white;
   border-radius: 10px;
+  @include laptopScreen {
+    width: 70%;
+    height: 295px;
+    grid-template-columns: auto 40%;
+  }
+  @include mobileScreen {
+    grid-template-columns: auto;
+    height: auto;
+    width: 335px;
+  }
 }
 .image-wrapper {
   width: 100%;
   overflow: hidden;
   border-radius: 10px 0 0 10px;
-  & img {
+  img {
     width: 100%;
+  }
+  @include mobileScreen {
+    border-radius: 10px 10px 0 0;
   }
 }
 .detail-wrapper {
@@ -50,21 +48,51 @@ main {
   background: white;
   left: -90px;
   width: 550px;
-  & > div {
+  > div {
     padding: 5% 0 5% 10%;
     width: 100%;
-    & > h1 {
+    > h1 {
       font-weight: map-get($font-weights, bold);
       font-size: 1.8rem;
       margin-bottom: 10px;
+      @include laptopScreen {
+        font-size: 1.5rem;
+      }
+      @include mobileScreen {
+        font-size: 1.1rem;
+      }
     }
-    & > p {
+    > p {
       font-size: 1.08rem;
       line-height: 25px;
       margin-bottom: 30px;
       font-weight: map-get($font-weights, normal);
       color: $DesaturatedDarkBlue;
+      @include laptopScreen {
+        line-height: 20px;
+        font-size: 0.8rem;
+      }
+      @include mobileScreen {
+        font-size: 0.9rem;
+        line-height: 25px;
+      }
     }
+    @include laptopScreen {
+      padding: 10% 0 5% 5%;
+    }
+    @include mobileScreen {
+      padding: 5%;
+    }
+  }
+  @include laptopScreen {
+    width: 450px;
+    left: -65px;
+    border-radius: 0 10px 10px 0;
+  }
+  @include mobileScreen {
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
   }
 }
 
@@ -75,17 +103,20 @@ main {
   align-items: center;
   width: 90%;
 
-  & .user-wrapper {
+  .user-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    & > img {
+    > img {
       width: 50px;
       border-radius: 50%;
       margin-right: 10%;
+      @include mobileScreen {
+        width: 40px;
+      }
     }
-    & > div {
-      & p {
+    > div {
+      p {
         font-weight: map-get($font-weights, bold);
         &:first-child {
           margin-bottom: 5%;
@@ -97,10 +128,10 @@ main {
     }
   }
 
-  & .share {
+  .share {
     justify-self: flex-end;
     position: relative;
-    & .share-icon {
+    .share-icon {
       background-color: $LightGrayishBlue;
       width: 40px;
       height: 40px;
@@ -115,9 +146,13 @@ main {
           fill: white;
         }
       }
+      @include mobileScreen {
+        position: relative;
+        z-index: 2;
+      }
     }
   }
-  & .social-media-icon-wrapper {
+  .social-media-icon-wrapper {
     width: 300px;
     border-radius: 10px;
     color: $GrayishBlue;
@@ -126,13 +161,21 @@ main {
     bottom: 75px;
     left: -130px;
     z-index: 1;
-    & .social-media {
+    .social-media {
       padding: 7% 15%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      & span:first-child {
+      span:first-child {
         letter-spacing: 5px;
+      }
+      a {
+        @include mobileScreen {
+          padding: 0 10%;
+        }
+      }
+      @include mobileScreen {
+        display: inline-flex;
       }
     }
     &::after {
@@ -144,7 +187,25 @@ main {
       left: 140px;
       bottom: -10px;
       transform: rotate(45deg);
+      @include mobileScreen {
+        visibility: hidden;
+      }
     }
+    @include laptopScreen {
+      width: 250px;
+    }
+    @include mobileScreen {
+      bottom: -17px;
+      left: -278px;
+      width: 335px;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  @include mobileScreen {
+    grid-template-columns: 2fr 1fr;
+  }
+  @include mobileScreen {
+    width: 100%;
   }
 }
 .active {

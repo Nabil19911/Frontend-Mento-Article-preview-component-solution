@@ -27,6 +27,7 @@ main {
   height: 375px;
   width: 100%;
   max-width: 1000px;
+  min-width: 335px;
   margin: auto;
   display: -ms-grid;
   display: grid;
@@ -34,6 +35,24 @@ main {
       grid-template-columns: auto 500px;
   background: white;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+  main {
+    width: 70%;
+    height: 295px;
+    -ms-grid-columns: auto 40%;
+        grid-template-columns: auto 40%;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  main {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    height: auto;
+    width: 335px;
+  }
 }
 
 .image-wrapper {
@@ -44,6 +63,12 @@ main {
 
 .image-wrapper img {
   width: 100%;
+}
+
+@media only screen and (max-width: 940px) {
+  .image-wrapper {
+    border-radius: 10px 10px 0 0;
+  }
 }
 
 .detail-wrapper {
@@ -64,12 +89,66 @@ main {
   margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 1100px) {
+  .detail-wrapper > div > h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .detail-wrapper > div > h1 {
+    font-size: 1.1rem;
+  }
+}
+
 .detail-wrapper > div > p {
   font-size: 1.08rem;
   line-height: 25px;
   margin-bottom: 30px;
   font-weight: 500;
   color: #6d7f97;
+}
+
+@media only screen and (max-width: 1100px) {
+  .detail-wrapper > div > p {
+    line-height: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .detail-wrapper > div > p {
+    font-size: 0.9rem;
+    line-height: 25px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .detail-wrapper > div {
+    padding: 10% 0 5% 5%;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .detail-wrapper > div {
+    padding: 5%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .detail-wrapper {
+    width: 450px;
+    left: -65px;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .detail-wrapper {
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
 }
 
 .user {
@@ -101,6 +180,12 @@ main {
   width: 50px;
   border-radius: 50%;
   margin-right: 10%;
+}
+
+@media only screen and (max-width: 940px) {
+  .user .user-wrapper > img {
+    width: 40px;
+  }
 }
 
 .user .user-wrapper > div p {
@@ -145,6 +230,13 @@ main {
   fill: white;
 }
 
+@media only screen and (max-width: 940px) {
+  .user .share .share-icon {
+    position: relative;
+    z-index: 2;
+  }
+}
+
 .user .social-media-icon-wrapper {
   width: 300px;
   border-radius: 10px;
@@ -173,6 +265,20 @@ main {
   letter-spacing: 5px;
 }
 
+@media only screen and (max-width: 940px) {
+  .user .social-media-icon-wrapper .social-media a {
+    padding: 0 10%;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .user .social-media-icon-wrapper .social-media {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+
 .user .social-media-icon-wrapper::after {
   content: "";
   width: 20px;
@@ -183,6 +289,40 @@ main {
   bottom: -10px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 940px) {
+  .user .social-media-icon-wrapper::after {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .user .social-media-icon-wrapper {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .user .social-media-icon-wrapper {
+    bottom: -17px;
+    left: -278px;
+    width: 335px;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .user {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .user {
+    width: 100%;
+  }
 }
 
 .active {
